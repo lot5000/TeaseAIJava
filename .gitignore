@@ -10,3 +10,6 @@ target
 Personalities/*
 Images/*
 Logs/*
+Updates/*
+lib/*
+Audio/*
