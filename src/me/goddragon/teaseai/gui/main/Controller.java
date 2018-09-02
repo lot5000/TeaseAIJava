@@ -1,5 +1,5 @@
 package me.goddragon.teaseai.gui.main;
-
+import com.jfoenix.controls.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -28,6 +28,7 @@ import me.goddragon.teaseai.utils.FileUtils;
 
 import java.io.File;
 
+
 public class Controller {
 
     private final Stage stage;
@@ -55,7 +56,7 @@ public class Controller {
     private ChoiceBox personalityChoiceBox;
 
     @FXML
-    private Button startChatButton;
+    private JFXButton startChatButton;
 
     @FXML
     private Menu menuSettingsButton;
@@ -75,9 +76,43 @@ public class Controller {
     //Sidebar
     @FXML
     private FlowPane lazySubPane;
+    @FXML
+    private FlowPane dynamicAnswersPane;
 
     @FXML
     private GridPane contactImageGrid;
+
+    //Library
+
+    @FXML
+    private StackPane rootPane;
+    @FXML
+    private JFXHamburger hamburger;
+    @FXML
+    private AnchorPane rootAnchorPane;
+    @FXML
+    private JFXTabPane mainTabPane;
+    @FXML
+    private Tab homeTab;
+    @FXML
+    private JFXButton issueButton;
+    @FXML
+    private Tab renewTab;
+    @FXML
+    private JFXDrawer drawer;
+    @FXML
+    private SplitPane mainSplitPane;
+    @FXML
+    private AnchorPane mediaViewAnchor;
+    @FXML
+    private AnchorPane chatViewAnchor;
+    @FXML
+    private GridPane startPersonalityGrid;
+  	@FXML
+  	private MenuBar topleftMenuBar;
+
+
+    //Lot5000
 
     public Controller(Stage stage) {
         this.stage = stage;
@@ -169,6 +204,7 @@ public class Controller {
 
         lazySubController = new LazySubController(lazySubPane);
         lazySubController.createDefaults();
+
     }
 
     public void loadDomInfo() {
@@ -302,4 +338,13 @@ public class Controller {
     public LazySubController getLazySubController() {
         return lazySubController;
     }
+
+
+    private void loadIssueOperation() {
+        //Load Issue Operation
+    }
+    @FXML
+    private void handleIssueButtonKeyPress() {
+    }
+
 }

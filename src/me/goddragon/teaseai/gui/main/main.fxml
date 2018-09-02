@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -18,22 +18,73 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.TextFlow?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2A2E37#2A2E37;" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="426.0" minWidth="0.0" prefWidth="234.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="426.0" minWidth="0.0" prefWidth="140.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="1046.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="656.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="645.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="34.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <SplitPane dividerPositions="0.78" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <items>
-                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="0.0" prefHeight="321.0" prefWidth="1150.0">
+      <MenuBar maxHeight="1.7976931348623157E308" maxWidth="160.0" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #2A2E37#2A2E37;">
+         <menus>
+            <Menu fx:id="menuSettingsButton" mnemonicParsing="false" />
+            <Menu mnemonicParsing="false" text="About" />
+         </menus>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </MenuBar>
+        <GridPane fx:id="startPersonalityGrid" style="-fx-background-color: black;" GridPane.columnIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1032.0" minWidth="10.0" prefWidth="286.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="984.0" minWidth="10.0" prefWidth="854.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane fx:id="contactImageGrid" maxWidth="160.0" prefHeight="691.0" prefWidth="140.0" style="-fx-background-color: #2A2E37#2A2E37;" stylesheets="@../css/dark-theme.css" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="513.0" minHeight="10.0" prefHeight="434.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="108.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+              <JFXButton fx:id="startChatButton" contentDisplay="TOP" maxWidth="160.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="160.0" styleClass="toolbar-button" text="Start" textAlignment="CENTER" />
+                <ChoiceBox fx:id="personalityChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="160.0" minWidth="160.0" prefHeight="55.0" prefWidth="891.0" style="-fx-background-color: #2A2E37#2A2E37;" styleClass="personnalityChoiceBox" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets left="20.0" />
+               </opaqueInsets></ChoiceBox>
+                <FlowPane fx:id="lazySubPane" alignment="TOP_CENTER" hgap="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="4.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </FlowPane>
+                <TextField fx:id="subNameTextField" promptText="Sub Name" style="-fx-background-color: grey;" styleClass="subNameTextField" visible="false" GridPane.rowIndex="4" />
+                <StackPane fx:id="domImageViewStackPane" maxHeight="200.0" maxWidth="1.7976931348623157E308" prefHeight="127.0" prefWidth="200.0" visible="false" GridPane.rowIndex="3">
                     <children>
-                        <StackPane fx:id="mediaViewBox" layoutX="6.0" layoutY="-13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="334.0" prefWidth="1157.0" styleClass="centerStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fx:id="domImageView" fitHeight="135.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+            </children>
+        </GridPane>
+        <SplitPane fx:id="mainSplitPane" dividerPositions="0.78" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <items>
+                <AnchorPane fx:id="mediaViewAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="321.0" prefWidth="1150.0">
+                    <children>
+                        <StackPane fx:id="mediaViewBox" layoutX="6.0" layoutY="-13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="334.0" prefWidth="1157.0" style="-fx-background-color: black;" styleClass="centerStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <MediaView id="mediaView" fx:id="mediaView" fitHeight="334.0" fitWidth="1157.0" />
                                 <ImageView fx:id="imageView" fitHeight="334.0" fitWidth="1157.0" pickOnBounds="true" preserveRatio="true" />
@@ -41,9 +92,9 @@
                         </StackPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="1170.0">
+                <AnchorPane fx:id="chatViewAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="1170.0">
                     <children>
-                        <ScrollPane fx:id="chatScrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="126.0" prefWidth="1170.0" styleClass="chatScrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="chatScrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="chatScrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <content>
                                 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="129.0" prefWidth="1168.0" styleClass="chatAnchorPane">
                                     <children>
@@ -56,50 +107,7 @@
                 </AnchorPane>
             </items>
         </SplitPane>
-        <TextField fx:id="chatTextField" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="863.0" promptText="Type to chat..." styleClass="inputTextField" GridPane.columnIndex="1" GridPane.hgrow="always" GridPane.rowIndex="2" GridPane.vgrow="always" />
-        <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="245.0">
-            <menus>
-                <Menu mnemonicParsing="false" styleClass="fileMenu" text="File" />
-                <Menu fx:id="menuSettingsButton" mnemonicParsing="false" />
-                <Menu mnemonicParsing="false" styleClass="helpMenu" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" styleClass="aboutMenuItem" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <GridPane GridPane.columnIndex="1">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="115.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="984.0" minWidth="10.0" prefWidth="931.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <ChoiceBox fx:id="personalityChoiceBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="369.0" styleClass="personnalityChoiceBox" GridPane.columnIndex="1" />
-                <Button fx:id="startChatButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" styleClass="startButton" text="Start" />
-            </children>
-        </GridPane>
-        <GridPane fx:id="contactImageGrid" prefHeight="691.0" prefWidth="234.0" GridPane.rowIndex="1">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="497.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <StackPane fx:id="domImageViewStackPane" maxHeight="200.0" maxWidth="1.7976931348623157E308" prefHeight="127.0" prefWidth="200.0" GridPane.rowIndex="2">
-                    <children>
-                        <ImageView fx:id="domImageView" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                    </children>
-                </StackPane>
-                <TextField fx:id="subNameTextField" promptText="Sub Name" styleClass="subNameTextField" GridPane.rowIndex="1" />
-                <FlowPane fx:id="lazySubPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-            </children>
-        </GridPane>
-        <TextField fx:id="domNameTextField" promptText="Dom Name" styleClass="domNameTextField" GridPane.rowIndex="2" />
+        <TextField fx:id="domNameTextField" promptText="Dom Name" style="-fx-background-color: grey;" styleClass="domNameTextField" visible="false" GridPane.rowIndex="2" />
+        <TextField fx:id="chatTextField" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="863.0" promptText="Type to chat..." style="-fx-background-color: grey;" styleClass="inputTextField" GridPane.columnIndex="1" GridPane.hgrow="always" GridPane.rowIndex="2" GridPane.vgrow="always" />
     </children>
 </GridPane>

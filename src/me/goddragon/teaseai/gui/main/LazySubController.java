@@ -23,23 +23,31 @@ public class LazySubController {
         Label setAnswers = new Label("Lazy Sub");
         setAnswers.setPrefWidth(flowPane.getWidth());
         setAnswers.setAlignment(Pos.BASELINE_CENTER);
-        setAnswers.setStyle("-fx-border-color: black;");
+        setAnswers.setStyle("-fx-border-color: grey;");
         this.flowPane.getChildren().add(setAnswers);
         addButton(createSendMessageButton("Hello", "Hello Mistress", flowPane.getWidth()));
+        addButton(createSendMessageButton("Yes", "Yes Mistress", flowPane.getWidth()));
+        addButton(createSendMessageButton("No", "No Mistress", flowPane.getWidth()));
+        addButton(createSendMessageButton("Edge", "I am on the edge", flowPane.getWidth()));
+        addButton(createSendMessageButton("Sorry", "I am sorry Mistress", flowPane.getWidth()));
+/*
+        addButton(createSendMessageButton("Hello", "Hello Mistress", flowPane.getWidth()/2D));
         addButton(createSendMessageButton("Yes", "Yes Mistress", flowPane.getWidth()/2D));
         addButton(createSendMessageButton("No", "No Mistress", flowPane.getWidth()/2D));
         addButton(createSendMessageButton("Edge", "I am on the edge", flowPane.getWidth()/2D));
         addButton(createSendMessageButton("Sorry", "I am sorry Mistress", flowPane.getWidth()/2D));
+*/
         Label dynamicAnswers = new Label("Dynamic Answers");
         dynamicAnswers.setPrefWidth(flowPane.getWidth());
         dynamicAnswers.setAlignment(Pos.BASELINE_CENTER);
-        dynamicAnswers.setStyle("-fx-border-color: black;");
+        dynamicAnswers.setStyle("-fx-border-color: grey;");
         //dynamicAnswers.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
         this.flowPane.getChildren().add(dynamicAnswers);
     }
 
     public Button createSendMessageButton(String buttonTitle, String chatMessage) {
-        return createSendMessageButton(buttonTitle, chatMessage, -1);
+        return createSendMessageButton(buttonTitle, chatMessage, flowPane.getWidth()/2D);
+        //return createSendMessageButton(buttonTitle, chatMessage, -1);
     }
 
     public Button createSendMessageButton(String buttonTitle, String chatMessage, double width) {
